@@ -1,0 +1,43 @@
+@startuml
+folder Model {
+  User "1" *-- "0..*" Work
+  Work "1" *-- "0..*" Page
+
+  class User {
+    name : String
+    email : String
+    password : String
+  }
+
+  class Work {
+    works
+    work
+    title : String
+    deadline : Date
+  }
+
+  class Page {
+    pages
+    page
+    stage : Integer
+    status : Integer
+    energy : Boolean
+    current : Boolean
+  }
+}
+
+folder Controller {
+  class WorksController {
+    +index()
+    +new()
+    +show()
+    +edit()
+    +update()
+    +destroy()
+  }
+
+  class PagesController {
+  }
+}
+
+@enduml
