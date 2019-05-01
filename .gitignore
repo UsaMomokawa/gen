@@ -6,7 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
-vendor/
+vendor/bundle
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -28,3 +28,10 @@ vendor/
 /config/master.key
 
 .ruby-version
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity

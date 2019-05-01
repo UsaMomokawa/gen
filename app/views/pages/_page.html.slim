@@ -5,11 +5,11 @@
     ul.is-button-group.page-status__buttons
       - %i(not_start pending complete).each do |status|
         - if page.status == status
-          li.page-status__buttons-item.is-active
+          li
             button.page-status__button.js-page-state.a-button.is-xs.is-primary(class="#{status}" data-status="#{status}" disabled)
               = t("activerecord.enums.page.status.#{status}")
         - else
-          li.page-status__buttons-item
+          li
             button.page-status__button.js-page-state.a-button.is-xs.is-secondary(class="#{status}" data-status="#{status}")
               = t("activerecord.enums.page.status.#{status}")
 
