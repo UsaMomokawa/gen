@@ -47,15 +47,9 @@ GEM
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
-    autoprefixer-rails (9.5.1)
-      execjs
     bindex (0.7.0)
     bootsnap (1.4.3)
       msgpack (~> 1.0)
-    bootstrap (4.3.1)
-      autoprefixer-rails (>= 9.1.0)
-      popper_js (>= 1.14.3, < 2)
-      sassc-rails (>= 2.0.0)
     builder (3.2.3)
     byebug (11.0.1)
     capybara (3.16.2)
@@ -82,6 +76,8 @@ GEM
     crass (1.0.4)
     erubi (1.8.0)
     execjs (2.7.0)
+    faker (1.9.3)
+      i18n (>= 0.7)
     ffi (1.10.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -116,7 +112,6 @@ GEM
     nokogiri (1.10.2)
       mini_portile2 (~> 2.4.0)
     pg (1.1.4)
-    popper_js (1.14.5)
     public_suffix (3.0.3)
     puma (3.12.1)
     rack (2.0.7)
@@ -211,11 +206,11 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
-  bootstrap
   byebug
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  faker
   html2slim
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
@@ -233,7 +228,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 RUBY VERSION
-   ruby 2.6.2p47
+   ruby 2.6.3p62
 
 BUNDLED WITH
    1.17.2
