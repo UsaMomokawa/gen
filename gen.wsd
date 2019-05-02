@@ -1,9 +1,13 @@
 @startuml
 folder Model {
   User "1" *-- "0..*" Work
+  User "1" *-- "0..*" Stage
   Work "1" *-- "0..*" Page
+  Stage "1" *-- "1" Page
 
   class User {
+    users
+    user
     name : String
     email : String
     password : String
@@ -19,14 +23,26 @@ folder Model {
   class Page {
     pages
     page
-    stage : Integer
     status : Integer
     energy : Boolean
-    current : Boolean
+  }
+
+  class Stage {
+    stages
+    stage
+    name : String
   }
 }
 
 folder Controller {
+  class UsersController {
+    +index()
+    +new()
+    +show()
+    +edit()
+    +update()
+  }
+
   class WorksController {
     +index()
     +new()
@@ -36,7 +52,22 @@ folder Controller {
     +destroy()
   }
 
+  class StagesController {
+    +index()
+    +new()
+    +show()
+    +edit()
+    +update()
+    +destroy()
+  }
+
   class PagesController {
+    +index()
+    +new()
+    +show()
+    +edit()
+    +update()
+    +destroy()
   }
 }
 
