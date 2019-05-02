@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class WorksController < ApplicationController
   before_action :set_pages
 
@@ -15,7 +17,7 @@ class WorksController < ApplicationController
   def edit
   end
 
-  private  
+  private
     def set_pages
       @pages = find_work.pages.order(created_at: :desc)
     end
