@@ -10,23 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_02_140448) do
+ActiveRecord::Schema.define(version: 2019_05_02_215920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "pages", force: :cascade do |t|
-    t.bigint "work_id"
     t.bigint "stage_id"
     t.integer "status", default: 0, null: false
     t.index ["stage_id"], name: "index_pages_on_stage_id"
-    t.index ["work_id"], name: "index_pages_on_work_id"
   end
 
   create_table "stages", force: :cascade do |t|
-    t.bigint "user_id"
+    t.bigint "work_id"
     t.string "name", null: false
-    t.index ["user_id"], name: "index_stages_on_user_id"
+    t.index ["work_id"], name: "index_stages_on_work_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,8 +41,5 @@ ActiveRecord::Schema.define(version: 2019_05_02_140448) do
     t.index ["user_id"], name: "index_works_on_user_id"
   end
 
-  add_foreign_key "pages", "stages"
-  add_foreign_key "pages", "works"
-  add_foreign_key "stages", "users"
   add_foreign_key "works", "users"
 end
