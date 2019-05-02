@@ -6,6 +6,6 @@ ja:
     enums:
       page:
         status:
-          not_start: 未着手
-          pending: 保留
+          not_complete: 未完
+          started: 進行中
           complete: 完了

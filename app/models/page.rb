@@ -1,9 +1,10 @@
 class Page < ApplicationRecord
   belongs_to :work
+  belongs_to :stage
 
   enum status: {
-    not_start: 0,
-    pending: 1,
+    not_complete: 0,
+    started: 1,
     complete: 2
   }
 end
