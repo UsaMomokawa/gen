@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title
+      | GEN
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    body
+      .app-title.navbar.navbar-expand-md.navbar-light.bg-light
+        .navbar-brand GEN
+      .container
+        = yield

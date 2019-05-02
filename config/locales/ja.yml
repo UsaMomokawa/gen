@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    models:
+      work: 原稿
+      page: ページ
+    enums:
+      page:
+        status:
+          not_complete: 未完
+          started: 進行中
+          complete: 完了

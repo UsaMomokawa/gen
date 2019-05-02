@@ -1,0 +1,10 @@
+header.page-header
+  .container
+    = @work.title
+
+
+.page-body
+  .container
+    .work-items
+      .work-items__inner
+        = render partial: "pages/page", collection: @pages, as: :page
