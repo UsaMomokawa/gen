@@ -1,8 +1,9 @@
 @startuml
 folder Model {
   User "1" *-- "0..*" Work
-  Work "1" *-- "0..*" Stage
-  Stage "1" *-- "0..*" Page
+  User "1" *-- "0..*" Stage
+  Work *-- Page
+  Stage *-- Page
 
   class User {
     users
@@ -18,15 +19,9 @@ folder Model {
     title : String
     memo : String
     print_company : String
-    due_time : Time
+    due_time : DateTime
     target_day : Date
-  }
-
-  class Page {
-    pages
-    page
-    status : Integer
-    matter : Boolean
+    total_page : Integer
   }
 
   class Stage {
@@ -34,6 +29,12 @@ folder Model {
     stage
     name : String
   }
+
+  class Page {
+    status : Integer
+    matter : Boolean
+  }
+
 }
 
 folder Controller {
