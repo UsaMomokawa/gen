@@ -9,3 +9,8 @@ ja:
           not_complete: 未完
           started: 進行中
           complete: 完了
+  helpers:
+    submit:
+      create: 登録する
+      submit: 保存する
+      update: 更新する

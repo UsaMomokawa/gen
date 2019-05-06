@@ -1,2 +1,14 @@
-h1 Works#index
-p Find me in app/views/works/index.html.slim
+h1 あなたの原稿一覧
+
+table
+  thead
+    tr
+      th タイトル
+  tbody
+    - @works.each do |work|
+      tr
+        td
+          = link_to "#{work.title}", work_path(work)
+
+button
+  = link_to "原稿を登録する", new_work_path
