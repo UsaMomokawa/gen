@@ -1,0 +1,21 @@
+- if user.errors.present?
+  ul
+    - user.errors.full_messages.each do |message|
+      li
+        = message
+
+= form_with model: user, local: true do |f|
+  .form-group
+    = f.label :name, '名前'
+    = f.text_field :name
+  .form-group
+    = f.label :email, 'メールアドレス'
+    = f.text_field :email
+  .form-group
+    = f.label :password, 'パスワード'
+    = f.password_field :password
+  .form-group
+    = f.label :password_confirmation, 'パスワード(確認)'
+    = f.password_field :password_confirmation
+
+  = f.submit nil
