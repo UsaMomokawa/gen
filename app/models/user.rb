@@ -2,6 +2,7 @@
 
 class User < ApplicationRecord
   has_many :works
+  has_many :stages
 
   has_secure_password
 
