@@ -1,11 +1,28 @@
 ja:
   activerecord:
     models:
+      user: ユーザー
       work: 原稿
       page: ページ
+    attributes:
+      name: 名前
+      email: メールアドレス
+      password: パスワード
+      password_confirmation: パスワード（確認）
+      created_at: 登録日時
+      updated_at: 更新日時
     enums:
       page:
         status:
           not_complete: 未完
           started: 進行中
           complete: 完了
+    errors:
+      messages:
+        record_invalid: 検証エラーが発生しました
+        blank: を入力してください
+  helpers:
+    submit:
+      create: 登録する
+      submit: 保存する
+      update: 更新する

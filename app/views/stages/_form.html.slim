@@ -1,0 +1,12 @@
+- if stage.errors.present?
+  ul
+    - stage.errors.full_messages.each do |message|
+      li
+        = message
+
+= form_with model: stage, local: true do |f|
+  .form-group
+    = f.label :name, '名前'
+    = f.text_field :name
+
+  = f.submit nil

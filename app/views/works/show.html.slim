@@ -1,10 +1,16 @@
-header.page-header
-  .container
-    = @work.title
+h1
+  = @work.title
 
+p 手順タブ
+p 状態カード
 
-.page-body
-  .container
-    .work-items
-      .work-items__inner
-        = render partial: "pages/page", collection: @pages, as: :page
+/ = render partial: "pages/page", collection: @pages, as: :page
+
+button
+  = link_to "情報を変更する", edit_work_path(@work)
+  
+button
+  = link_to "原稿を削除する", @work, method: :delete, data: { confirm: "#{@work.title}を削除します。よろしいですか？" }
+
+button
+  = link_to "原稿一覧に戻る", works_path
