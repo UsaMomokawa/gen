@@ -14,11 +14,11 @@ class WorksController < ApplicationController
   end
 
   def create
-    work = Work.new(work_params)
-    work.user = current_user
+    @work = Work.new(work_params)
+    @work.user = current_user
 
-    if work.save
-      redirect_to work_path(work), notice: "#{work.title}が登録されました"
+    if @work.save
+      redirect_to work_path(@work), notice: "#{@work.title}が登録されました"
     else
       render "new"
     end
@@ -29,10 +29,10 @@ class WorksController < ApplicationController
   end
 
   def update
-    work = find_work
+    @work = find_work
 
-    if work.update(work_params)
-      redirect_to work_path(work), notice: "#{work.title}の情報が変更されました"
+    if @work.update(work_params)
+      redirect_to work_path(@work), notice: "#{@work.title}の情報が変更されました"
     else
       render "edit"
     end
