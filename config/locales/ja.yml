@@ -7,12 +7,19 @@ ja:
       page: ページ
       progress: 進捗
     attributes:
-      name: 名前
-      email: メールアドレス
-      password: パスワード
-      password_confirmation: パスワード（確認）
-      created_at: 登録日時
-      updated_at: 更新日時
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード（確認）
+        created_at: 登録日時
+        updated_at: 更新日時
+      work:
+        title: タイトル
+        total_page: ページ数
+        selected_stage: 選択された手順
+      stage:
+        name: 手順名
     enums:
       progress:
         status:
@@ -23,6 +30,8 @@ ja:
       messages:
         record_invalid: 検証エラーが発生しました
         blank: を入力してください
+        too_short: が短すぎます
+        too_long: が長すぎます
   helpers:
     submit:
       create: 登録する

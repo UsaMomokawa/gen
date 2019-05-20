@@ -1,15 +1,19 @@
-- @stages = current_user.stages.all
+- if work.errors.present?
+  ul
+    - work.errors.full_messages.each do |message|
+      li
+        = message
 
 ul
   = form_with model: work, local: true do |f|
-    li 漫画タイトル
+    li タイトル
     = f.text_field :title
 
     li ページ数(40ページまで)
-    = f.number_field :total_page, min: 0, max: 40
+    = f.select :total_page, (4..40).map{ |n| n if n.even? }.compact!
 
     li なにから始める？
-    = f.select :selected_stage, @stages.map{ |stage| [stage.name, stage.id] }
+    = f.select :selected_stage, current_user.stages.all.map{ |stage| [stage.name, stage.id] }
 
     li
     = f.submit nil
