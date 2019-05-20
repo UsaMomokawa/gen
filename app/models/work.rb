@@ -2,6 +2,6 @@
 
 class Work < ApplicationRecord
   belongs_to :user
-  has_many :stages
-  has_many :pages
+  has_many :pages, dependent: :destroy
+  has_many :progresses, dependent: :destroy
 end
