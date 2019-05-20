@@ -9,6 +9,10 @@ table
       tr
         td
           = link_to "#{work.title}", work_path(work)
+          button
+            = link_to "編集", edit_work_path(work)
+          button
+            = link_to "削除", work, method: :delete,  data: { confirm: "#{work.title}を削除します。よろしいですか？" }
 
 button
   = link_to "原稿を登録する", new_work_path

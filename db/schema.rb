@@ -10,10 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_11_073302) do
+ActiveRecord::Schema.define(version: 2019_05_20_102719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "pages", force: :cascade do |t|
+    t.boolean "matter", default: false, null: false
+    t.bigint "work_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["work_id"], name: "index_pages_on_work_id"
+  end
+
+  create_table "progresses", force: :cascade do |t|
+    t.integer "status", default: 0, null: false
+    t.bigint "stage_id"
+    t.bigint "page_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "work_id"
+    t.index ["page_id"], name: "index_progresses_on_page_id"
+    t.index ["stage_id"], name: "index_progresses_on_stage_id"
+    t.index ["work_id"], name: "index_progresses_on_work_id"
+  end
 
   create_table "stages", force: :cascade do |t|
     t.string "name", null: false
@@ -36,10 +56,14 @@ ActiveRecord::Schema.define(version: 2019_05_11_073302) do
     t.string "title", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "total_page"
+    t.integer "total_page", null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_works_on_user_id"
   end
 
+  add_foreign_key "pages", "works"
+  add_foreign_key "progresses", "pages"
+  add_foreign_key "progresses", "stages"
+  add_foreign_key "progresses", "works"
   add_foreign_key "works", "users"
 end

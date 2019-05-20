@@ -9,7 +9,9 @@ button
 button
   = link_to "手順を追加する"
 
-p 基本情報
+p 状態カード
+
+= render partial: "progresses/progress", collection: @progresses, as: :progress
 
 button
   = link_to "情報を変更する", edit_work_path(@work)

@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   resources :users
   resources :works
   resources :stages
+
+  resources :works, only: %i(show) do
+    resources :stages, only: %i(show), controller: "works/stages"
+  end
 end
