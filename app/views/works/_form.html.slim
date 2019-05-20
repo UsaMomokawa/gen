@@ -1,5 +1,15 @@
-= form_with model: work, local: true do |f|
-  = f.label :title
-  = f.text_field :title
+- @stages = current_user.stages.all
 
-  = f.submit nil
+ul
+  = form_with model: work, local: true do |f|
+    li 漫画タイトル
+    = f.text_field :title
+
+    li ページ数(40ページまで)
+    = f.number_field :total_page, min: 0, max: 40
+
+    li なにから始める？
+    = f.select :selected_stage, @stages.map{ |stage| [stage.name, stage.id] }
+
+    li
+    = f.submit nil

@@ -3,7 +3,9 @@ ja:
     models:
       user: ユーザー
       work: 原稿
+      stage: 手順
       page: ページ
+      progress: 進捗
     attributes:
       name: 名前
       email: メールアドレス
@@ -12,7 +14,7 @@ ja:
       created_at: 登録日時
       updated_at: 更新日時
     enums:
-      page:
+      progress:
         status:
           not_complete: 未完
           started: 進行中
