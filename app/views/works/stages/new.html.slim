@@ -1,0 +1,2 @@
+li なにから始める？
+= f.select :selected_stage, current_user.stages.all.map{ |stage| [stage.name, stage.id] }

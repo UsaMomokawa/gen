@@ -12,8 +12,5 @@ ul
     li ページ数(40ページまで)
     = f.select :total_page, (4..40).map{ |n| n if n.even? }.compact!
 
-    li なにから始める？
-    = f.select :selected_stage, current_user.stages.all.map{ |stage| [stage.name, stage.id] }
-
     li
     = f.submit nil
