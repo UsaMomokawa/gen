@@ -1,0 +1,14 @@
+.card-list-items
+  height: 100px
+  padding: .5rem
+  background-color: $card
+  &:nth-child(even)
+    background-color: $card-shade
+  &:not(:last-child)
+    border-bottom: solid 1px $border
+  &:last-child
+    border-bottom-left-radius: 7.5px
+    border-bottom-right-radius: 7.5px
+
+.card-list-item
+  display: flex

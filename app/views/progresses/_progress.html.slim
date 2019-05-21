@@ -1,7 +1,7 @@
-ul
-  li 
-    = progress_counter + 1
-    | ページ目
-  li
-    = progress.status
-
+.card-list-items
+  ul.card-list-item
+    li.card-list-item__number
+      = progress_counter + 1
+      | ページ目
+    li.card-list-item__status
+      = progress.status
