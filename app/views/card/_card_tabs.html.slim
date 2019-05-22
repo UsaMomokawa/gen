@@ -9,4 +9,5 @@
               = link_to work_stage_path(work_id: work, id: stage), class: "card-tabs__item-link #{current_card_tab_or_not("#{stage.id}")}"
                 = stage.name
       li.card-tabs__item
+        i.fas.fa-plus-circle.card-tabs__icon
         = link_to "手順を追加", new_work_stage_path(work_id: work), class: "card-tabs__item-link"
