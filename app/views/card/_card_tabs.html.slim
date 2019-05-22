@@ -1,6 +1,8 @@
 .card-tabs
   .container
     ul.card-tabs__items
+      li.card-tabs__item
+        = link_to "基本情報", work_path(work), class: "card-tabs__item-link"
       - work.stages.each do |stage|
         - if Progress.exists?(work_id: work, stage_id: stage)
           li.card-tabs__item

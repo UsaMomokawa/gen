@@ -6,8 +6,8 @@ module CardTabsHelper
   private
     def current_card_tab?(target_id)
       paths = url_for.split("/")
-      if paths.last == target_id
-        true
+      if paths[-2] === "stages"
+        true if paths.last == target_id
       end
     end
 end
