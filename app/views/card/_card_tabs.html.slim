@@ -1,0 +1,10 @@
+.card-tabs
+  .container
+    ul.card-tabs__items
+      li.card-tabs__item
+        = link_to "基本情報", work_path(work), class: "card-tabs__item-link #{current_card_tab_or_not("#{work.id}")}"
+      - current_user.stages.each do |stage|
+        - if Progress.exists?(work_id: work, stage_id: stage)
+          li.card-tabs__item
+              = link_to work_stage_path(work_id: work, id: stage), class: "card-tabs__item-link #{current_card_tab_or_not("#{stage.id}")}"
+                = stage.name
