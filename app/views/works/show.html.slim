@@ -4,12 +4,10 @@
       .card-tabs
         = render "card/card_tabs", work: @work
       .card-list
-        = render partial: "progresses/progress", collection: @progresses, as: :progress
-        button
-          = link_to "情報を変更する", edit_work_path(@work)
-          
-        button
-          = link_to "原稿を削除する", @work, method: :delete, data: { confirm: "#{@work.title}を削除します。よろしいですか？" }
-
-        button
-          = link_to "原稿一覧に戻る", works_path
+        - if @progresses
+          = render partial: "progresses/progress", collection: @progresses, as: :progress
+        - else
+          .card-list-items
+            ul.card-list-item
+              li
+              | 新しい手順を追加しましょう
