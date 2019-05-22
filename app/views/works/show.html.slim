@@ -7,7 +7,17 @@
         - if @progresses
           = render partial: "progresses/progress", collection: @progresses, as: :progress
         - else
-          .card-list-items
-            ul.card-list-item
-              li
-              | 新しい手順を追加しましょう
+          .card-info
+            ul.card-info-items
+              li.card-info-item__title
+                i.fas.fa-bookmark.is-left-icon
+                | タイトル
+              li.card-info-item__content
+                = @work.title
+            ul.card-info-items
+              li.card-info-item__title
+                i.fas.fa-copy.is-left-icon
+                | ページ数
+              li.card-info-item__content
+                = @work.total_page
+                | p
