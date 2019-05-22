@@ -5,7 +5,10 @@
         = message
 
 = form_with model: [:work, stage], local: true do |f|
-  .form-group
-    = f.text_field :name
-
-  = f.submit nil
+  .form-item
+    .form-item__label
+      | タイトル
+    = f.text_field :name, class: "form-item__text"
+  
+  .form-item
+    = f.submit nil, class: "a-button is-submit"

@@ -4,18 +4,24 @@
       li
         = message
 
-= form_with model: user, local: true do |f|
-  .form-group
-    = f.label :name, '名前'
-    = f.text_field :name
-  .form-group
-    = f.label :email, 'メールアドレス'
-    = f.text_field :email
-  .form-group
-    = f.label :password, 'パスワード'
-    = f.password_field :password
-  .form-group
-    = f.label :password_confirmation, 'パスワード(確認)'
-    = f.password_field :password_confirmation
+.form-items
+  = form_with model: user, local: true do |f|
+    .form-item
+      .form-item__label
+        | 名前
+      = f.text_field :name, class: "form-item__text"
+    .form-item
+      .form-item__label
+        | メールアドレス
+      = f.text_field :email, class: "form-item__text"
+    .form-item
+      .form-item__label
+        | パスワード
+      = f.password_field :password, class: "form-item__text"
+    .form-item
+      .form-item__label
+        | パスワード(確認)
+      = f.password_field :password_confirmation, class: "form-item__text"
 
-  = f.submit nil
+    .form-item
+      = f.submit nil, class: "a-button is-submit"

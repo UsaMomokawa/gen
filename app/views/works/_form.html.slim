@@ -4,13 +4,19 @@
       li
         = message
 
-ul
+.form-items
   = form_with model: work, local: true do |f|
-    li タイトル
-    = f.text_field :title
+    .form-item
+      .form-item__label
+        | タイトル
+      = f.text_field :title, class: "form-item__text"
 
-    li ページ数(40ページまで)
-    = f.select :total_page, (4..40).map{ |n| n if n.even? }.compact!
+    .form-item
+      .form-item__label
+        | ページ数
+      .form-item__select
+        i.fas.fa-caret-down.is-left-icon
+        = f.select :total_page, (4..40).map{ |n| n if n.even? }.compact!
 
-    li
-    = f.submit nil
+    .form-item
+      = f.submit nil, class: "a-button is-submit"
