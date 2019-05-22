@@ -14,23 +14,14 @@ class WorksController < ApplicationController
   end
 
   def create
-    # StrongParameters
-    params.require(:work).permit(
-      :title,
-      :total_page,
-      :selected_stage
-    )
-
-    @work = Work.new(title: params[:work][:title], total_page: params[:work][:total_page], user: current_user)
-    @stage = Stage.find(params[:work][:selected_stage])
+    @work = Work.new(work_params)
+    @work.user = current_user
 
     if @work.save
-      # 原稿の手順・ページに対応した、進捗状態の作成
       @work.total_page.times do
         page = Page.create(work: @work)
-        Progress.create(stage_id: @stage.id, page_id: page.id, work_id: @work.id)
       end
-      redirect_to work_stage_path(work_id: @work.id, id: @stage.id), notice: "#{@work.title}が登録されました"
+      redirect_to work_path(@work), notice: "#{@work.title}が登録されました"
     else
       render "new"
     end

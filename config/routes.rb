@@ -8,9 +8,8 @@ Rails.application.routes.draw do
   root to: "works#index"
   resources :users
   resources :works
-  resources :stages
 
   resources :works, only: %i(show) do
-    resources :stages, only: %i(show), controller: "works/stages"
+    resources :stages, only: %i(new create show), controller: "works/stages"
   end
 end
