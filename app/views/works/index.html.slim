@@ -1,18 +1,20 @@
-h1 あなたの原稿一覧
-
-table
+table.works-table
   thead
     tr
-      th タイトル
+      th.works-table__head
+       | タイトル
   tbody
     - @works.each do |work|
-      tr
-        td
+      tr.works-table__thread
+        td.works-table__title
           = link_to "#{work.title}", work_path(work)
+        td.works-table__buttons
           button
-            = link_to "編集", edit_work_path(work)
+            = link_to "編集", edit_work_path(work), class: "works-table__button is-info"
           button
-            = link_to "削除", work, method: :delete,  data: { confirm: "#{work.title}を削除します。よろしいですか？" }
+            = link_to "削除", work, method: :delete,  data: { confirm: "#{work.title}を削除します。よろしいですか？" }, class: "works-table__button is-danger"
 
-button
-  = link_to "原稿を登録する", new_work_path
+.works-tools
+  .works-tool
+    button
+      = link_to "原稿を登録する", new_work_path, class: "works-tool__button"
