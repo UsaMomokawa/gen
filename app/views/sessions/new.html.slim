@@ -1,11 +1,18 @@
-h1 ログイン
+.form-container
+  .form-title
+    | ログイン
 
-= form_with scope: :session, local: true do |f|
-  .form-group
-    = f.label :email, 'メールアドレス'
-    = f.text_field :email, id: 'session_email'
-  .form-group
-    = f.label :password, 'パスワード'
-    = f.password_field :password, id: 'session_password'
+  .form-body
+    .form-items
+      = form_with scope: :session, local: true do |f|
+        .form-item
+          .form-item__label
+            | メールアドレス
+          = f.text_field :email, id: 'session_email', class: "form-item__text"
+        .form-item
+          .form-item__label
+            | パスワード
+          = f.password_field :password, id: 'session_password', class: "form-item__text"
 
-  = f.submit 'ログイン'
+        .form-item
+          = f.submit 'ログイン', class: "a-button is-submit"

@@ -8,18 +8,10 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     body
-      .title
-        | GEN
-      ul
+      .wrapper
         - if current_user
-          li
-            = link_to '原稿一覧', works_path
-          li
-            = link_to 'ログアウト', logout_path, method: :delete
-        - else
-          li
-            = link_to 'ログイン', login_path
-      .container
+          = render "header"
         - if flash.notice.present?
           = flash.notice
-        = yield
+        main
+          = yield
