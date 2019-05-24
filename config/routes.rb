@@ -6,13 +6,6 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   root to: "works#index"
-
-  namespace "api" do
-    resources :works, only: %i(show) do
-      resources :pages, only: %i(index create destroy), controller: "works/pages"
-    end
-  end
-
   resources :users
   resources :works
 
