@@ -2,7 +2,7 @@ class Works::StagesController < ApplicationController
   def show
     @work  = find_work
     @stage = Stage.find(params[:id])
-    @progresses = @work.progresses.where(stage: @stage)
+    @progresses = @work.progresses.where(stage: @stage).order(:page_id)
   end
 
   def new
