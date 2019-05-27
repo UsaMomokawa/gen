@@ -1,7 +1,6 @@
 .card-list-items
   display: flex
-  height: 100px
-  padding: .5rem
+  padding: 2rem
   background-color: $card
   &:nth-child(even)
     background-color: $card-shade
@@ -12,7 +11,9 @@
     border-bottom-right-radius: 7.5px
 
 .card-list-item
-  display: flex
+  display: inline-flex
+  flex: 100
+  justify-content: space-between
   align-items: center
   flex-flow: row wrap
 

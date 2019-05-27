@@ -1,2 +1,25 @@
+.page-status
+  display: flex
+
 .page-status__buttons
   display: flex
+  li:first-child
+    .a-button
+      border-top-right-radius: 0
+      border-bottom-right-radius: 0
+  li:last-child
+    .a-button
+      border-top-left-radius: 0
+      border-bottom-left-radius: 0
+  li:not(:first-child):not(:last-child)
+    .a-button
+      border-radius: 0
+
+.page-status__button
+  padding: 1rem 1.5rem
+  border: solid .5px $border
+  color: $border
+
+.page-status__button.a-button.is-primary:disabled
+  border: none
+  color: $base

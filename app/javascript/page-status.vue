@@ -12,17 +12,6 @@
       </li>
     </ul>
   </div>
-<!-- 
-  ul.is-button-group.page-status__buttons
-    li.page-status__buttons-item
-      button.page-status__button.a-button.js-not-complete(v-bind:disabled="statusName === 'not_complete'" v-bind:class="[statusName === 'not_complete' ? 'is-primary' : 'is-secondary']" @click="pushStatus('not_complete')")
-        | 未完
-    li.page-status__buttons-item
-      button.page-status__button.a-button.js-started(v-bind:disabled="statusName === 'started'" v-bind:class="[statusName === 'started' ? 'is-primary' : 'is-secondary']" @click="pushStatus('started')")
-        | 開始
-    li.page-status__buttons-item
-      button.page-status__button.a-button.js-complete(v-bind:disabled="statusName === 'complete'" v-bind:class="[statusName === 'complete' ? 'is-primary' : 'is-secondary']" @click="pushStatus('complete')")
-        | 完了 -->
 </template>
 <script>
 
