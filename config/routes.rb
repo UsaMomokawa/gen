@@ -13,6 +13,7 @@ Rails.application.routes.draw do
         resource :progress, only: %i(show update), controller: "works/stages/progresses"
       end
     end
+    resources :pages, only: %i(show update)
   end
 
   resources :users
