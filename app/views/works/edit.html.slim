@@ -3,4 +3,19 @@
     | 原稿情報の編集
 
   .form-body
-    = render "form", work: @work
+    - if @work.errors.present?
+      ul
+        - @work.errors.full_messages.each do |message|
+          li
+            = message
+
+    .form-items
+      = form_with model: @work, local: true do |f|
+        .form-item
+          .form-item__label
+            | タイトル
+          = f.text_field :title, class: "form-item__text"
+
+        .form-item
+          = f.submit nil, class: "a-button is-submit"
+
