@@ -13,4 +13,12 @@ class PagesController < ApplicationController
     redirect_to work,
       notice: "ページを追加しました"
   end
+
+  def destroy
+    work = Work.find(params[:work_id])
+    page = Page.find(params[:page_id])
+    page.destroy
+    redirect_to work,
+      notice: "ページを削除しました"
+  end
 end
