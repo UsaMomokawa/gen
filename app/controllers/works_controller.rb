@@ -16,9 +16,10 @@ class WorksController < ApplicationController
   def create
     @work = Work.new(work_params)
     @work.user = current_user
+    total_page = params[:work][:total_page].to_i
 
     if @work.save
-      @work.total_page.times do
+      total_page.times do
         page = Page.create(work: @work)
       end
       redirect_to work_path(@work), notice: "#{@work.title}が登録されました"
@@ -50,8 +51,7 @@ class WorksController < ApplicationController
   private
     def work_params
       params.require(:work).permit(
-        :title,
-        :total_page
+        :title
       )
     end
 

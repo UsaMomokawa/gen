@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :works
+  resources :pages, only: %i(create destroy)
 
   resources :works, only: %i(show) do
     resources :stages, only: %i(new create show), controller: "works/stages"

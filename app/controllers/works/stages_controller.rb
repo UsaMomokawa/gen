@@ -14,7 +14,7 @@ class Works::StagesController < ApplicationController
     @work  = find_work
     @stage.work_id = @work.id
 
-    if @stage.save!
+    if @stage.save
       @work.pages.each do |page|
         Progress.create(work: @work, stage: @stage, page: page)
       end
