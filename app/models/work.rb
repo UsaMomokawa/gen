@@ -7,5 +7,4 @@ class Work < ApplicationRecord
   has_many :stages, dependent: :destroy
 
   validates :title, presence: true, length: { maximum: 40 }
-  validates :total_page, presence: true
 end
