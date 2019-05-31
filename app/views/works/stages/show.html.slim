@@ -5,3 +5,10 @@
         = render "card/card_tabs", work: @work
       .card-list
         = render partial: "progresses/progress", collection: @progresses, as: :progress
+      .card-footer
+        .card-footer__items
+          button.a-button.is-submit
+            = form_with url: pages_path, local: true do |f|
+              = hidden_field_tag :work_id, @work.id
+              i.fas.fa-plus.is-left-icon
+              = f.submit "ページを増やす"
