@@ -1,5 +1,14 @@
 .page-body
   .container
+    .work-deadline
+      - day = (@work.deadline - Date.today).numerator
+      ul.work-deadline__items
+        li.work-deadline__item
+          | 締切まであと
+        li.work-deadline__item.is-deadline
+          = day
+        li.work-deadline__item
+          | 日
     .work-status
       .card-tabs
         = render "card/card_tabs", work: @work
@@ -21,3 +30,9 @@
               li.card-info-item__content
                 = @work.pages.length
                 | p
+            ul.card-info-items
+              li.card-info-item__title
+                i.fas.fa-calendar-alt.is-left-icon
+                | 締切
+              li.card-info-item__content
+                = @work.deadline
