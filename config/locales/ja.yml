@@ -17,7 +17,7 @@ ja:
       work:
         title: タイトル
         total_page: ページ数
-        selected_stage: 選択された手順
+        deadline: 締切
       stage:
         name: 手順名
     enums:

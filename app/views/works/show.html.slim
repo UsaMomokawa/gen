@@ -21,3 +21,9 @@
               li.card-info-item__content
                 = @work.pages.length
                 | p
+            ul.card-info-items
+              li.card-info-item__title
+                i.fas.fa-calendar-alt.is-left-icon
+                | 締切
+              li.card-info-item__content
+                = @work.deadline
