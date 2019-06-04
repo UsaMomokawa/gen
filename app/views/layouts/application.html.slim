@@ -13,7 +13,6 @@ html
       .wrapper
         - if current_user
           = render "header"
-        - if flash.notice.present?
-          = flash.notice
+        = render "flash"
         main
           = yield
