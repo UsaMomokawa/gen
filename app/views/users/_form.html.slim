@@ -7,20 +7,16 @@
 .form-items
   = form_with model: user, local: true do |f|
     .form-item
-      .form-item__label
-        | 名前
+      = f.label :name, class: "form-item__label"
       = f.text_field :name, class: "form-item__text"
     .form-item
-      .form-item__label
-        | メールアドレス
+      = f.label :email, class: "form-item__label"
       = f.text_field :email, class: "form-item__text"
     .form-item
-      .form-item__label
-        | パスワード
+      = f.label :password, class: "form-item__label"
       = f.password_field :password, class: "form-item__text"
     .form-item
-      .form-item__label
-        | パスワード(確認)
+      = f.label :password_confirmation, class: "form-item__label"
       = f.password_field :password_confirmation, class: "form-item__text"
 
     .form-item
