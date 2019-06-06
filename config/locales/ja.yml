@@ -32,6 +32,7 @@ ja:
         blank: を入力してください
         too_short: が短すぎます
         too_long: が長すぎます
+        taken: は既に使われています
   helpers:
     submit:
       create: 登録する
