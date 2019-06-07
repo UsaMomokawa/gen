@@ -12,20 +12,17 @@
     .form-items
       = form_with model: @work, local: true do |f|
         .form-item
-          .form-item__label
-            | タイトル
+          = f.label :title, class: "form-item__label"
           = f.text_field :title, class: "form-item__text"
 
         .form-item
-          .form-item__label
-            | ページ数
+          = f.label :total_page, class: "form-item__label"
           .form-item__select
             i.fas.fa-caret-down.is-left-icon
             = f.select :total_page, (4..40).map{ |n| n if n.even? }.compact!
 
         .form-item
-          .form-item__label
-            | 締切
+          = f.label :deadline, class: "form-item__label"
           = f.date_field :deadline, value: Time.current.strftime("%Y-%m-%d"), class: "form-item__text"
 
         .form-item
