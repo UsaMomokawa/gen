@@ -21,9 +21,6 @@ export default {
     if (this.matter == "true") {
       this.isMatter = true
       this.matterLabel = "見せ場あり"
-    } else {
-      this.isMatter = false
-      this.matterLabel = "見せ場なし"
     }
   },
   methods: {
