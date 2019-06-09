@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module CardTabsHelper
   def current_card_tab_or_not(target_id)
     current_card_tab?(target_id) ? "is-active" : ""

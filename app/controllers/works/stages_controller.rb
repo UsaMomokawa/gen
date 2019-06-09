@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Works::StagesController < ApplicationController
   def show
     @work  = find_work

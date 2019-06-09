@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Progress < ApplicationRecord
   belongs_to :stage
   belongs_to :page

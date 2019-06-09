@@ -20,7 +20,7 @@ class WorksController < ApplicationController
 
     if @work.save
       total_page.times do
-        page = Page.create(work: @work)
+        Page.create(work: @work)
       end
       redirect_to work_path(@work), notice: "#{@work.title}が登録されました"
     else

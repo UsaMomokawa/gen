@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Api::Works::Stages::ProgressesController < ApplicationController
   def show
     @progress = Progress.find_by(
