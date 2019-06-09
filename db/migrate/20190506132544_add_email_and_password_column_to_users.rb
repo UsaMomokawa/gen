@@ -1,4 +1,6 @@
-require_relative '20190502132712_create_users'
+# frozen_string_literal: true
+
+require_relative "20190502132712_create_users"
 
 class AddEmailAndPasswordColumnToUsers < ActiveRecord::Migration[5.2]
   def change

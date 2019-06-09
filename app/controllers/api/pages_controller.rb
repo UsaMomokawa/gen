@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Api::PagesController < ApplicationController
   def show
     @page = Page.find_by(

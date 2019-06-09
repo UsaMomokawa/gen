@@ -1,4 +1,6 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe Work, type: :model do
   it "is invalid with a title which has more than 41 words" do
