@@ -1,6 +1,9 @@
 <template>
   <div class="page-matter__button" :class=" isMatter ? 'is-active' : '' " @click="push">
-    <i class="fas fa-burn page-matter__icon"></i>
+    <i class="fas fa-burn page-matter__icon is-left-icon"></i>
+    <div class="page-matter__text">
+      {{ matterLabel }}
+    </div>
   </div>
 </template>
 
@@ -10,14 +13,17 @@ export default {
   props: ['pageId', 'matter'],
   data () {
     return {
-      isMatter: false
+      isMatter: false,
+      matterLabel: "見せ場なし"
     }
   },
   mounted () {
     if (this.matter == "true") {
       this.isMatter = true
+      this.matterLabel = "見せ場あり"
     } else {
       this.isMatter = false
+      this.matterLabel = "見せ場なし"
     }
   },
   methods: {
@@ -48,6 +54,7 @@ export default {
       })
         .then(response => {
           this.isMatter = true
+          this.matterLabel = "見せ場あり"
         })
         .catch(error => {
           console.warn('Failed to parsing', error)
@@ -69,6 +76,7 @@ export default {
       })
         .then(response => {
           this.isMatter = false
+          this.matterLabel = "見せ場なし"
         })
         .catch(error => {
           console.warn('Failed to parsing', error)
