@@ -11,6 +11,6 @@ RSpec.describe "Users", type: :system do
     fill_in "パスワード(確認)", with: "testtest"
     click_button "登録する"
 
-    expect(page).to have_content "ユーザーを新規登録しました"
+    expect(page).to have_content "アカウントを登録しました"
   end
 end
