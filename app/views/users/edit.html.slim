@@ -4,3 +4,9 @@
 
   .form-body
     = render "form", user: @user
+
+  .form-footer
+    .form-footer__items
+      = link_to "アカウントを削除する", @user, method: :delete,
+        data: { confirm: "アカウントを削除します。登録した原稿も削除されます。よろしいですか？" },
+        class: "form-footer__items-link"
