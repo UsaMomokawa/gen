@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  has_many :works
+  has_many :works, dependent: :destroy
 
   has_secure_password
 
