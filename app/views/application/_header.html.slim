@@ -9,6 +9,8 @@ header.header
             li.header_menu__item
               = link_to "原稿一覧へ", works_path
             li.header_menu__item
+              = link_to "アカウント編集", edit_user_path(current_user)
+            li.header_menu__item
               = link_to "ログアウト", logout_path, method: :delete, notice: "ログアウトしました"
         - else
           ul.header-menu__items
