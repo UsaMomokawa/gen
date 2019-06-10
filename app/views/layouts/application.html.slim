@@ -11,8 +11,7 @@ html
 
     body
       .wrapper
-        - if current_user
-          = render "header"
+        = render "header"
         = render "flash"
         main
           = yield

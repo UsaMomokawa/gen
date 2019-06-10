@@ -4,8 +4,15 @@ header.header
       h1.header-title
         | GEN
       .header_links
-        ul.header-menu__items
-          li.header_menu__item
-            = link_to "原稿一覧へ", works_path
-          li.header_menu__item
-            = link_to "ログアウト", logout_path, method: :delete, notice: "ログアウトしました"
+        - if current_user
+          ul.header-menu__items
+            li.header_menu__item
+              = link_to "原稿一覧へ", works_path
+            li.header_menu__item
+              = link_to "ログアウト", logout_path, method: :delete, notice: "ログアウトしました"
+        - else
+          ul.header-menu__items
+            li.header_menu__item
+              = link_to "アカウント登録", new_user_path
+            li.header_menu__item
+              = link_to "ログイン", login_path
