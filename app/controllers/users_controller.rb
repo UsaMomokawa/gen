@@ -12,21 +12,21 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      redirect_to works_path, notice: "ユーザーを新規登録しました"
+      redirect_to works_path, notice: "アカウントを登録しました"
     else
       render "new"
     end
   end
 
   def edit
-    @user = User.new
+    @user = User.find(params[:id])
   end
 
   def update
     @user = User.find(params[:id])
 
     if @user.update(user_params)
-      redirect_to works_path, notice: "ユーザー情報を更新しました"
+      redirect_to works_path, notice: "アカウント情報を更新しました"
     else
       render "edit"
     end
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to new_user_path, notice: "ユーザーを削除しました"
+    redirect_to new_user_path, notice: "アカウントを削除しました"
   end
 
   private
