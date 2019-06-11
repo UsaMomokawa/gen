@@ -7,7 +7,7 @@ table.works-table
     - @works.each do |work|
       tr.works-table__thread
         td.works-table__title
-          = link_to "#{work.title}", work_path(work)
+          = link_to "#{work.title}", work_path(work), class: "works-table__link"
         td.works-table__buttons
           button
             = link_to "編集", edit_work_path(work), class: "works-table__button is-info"
