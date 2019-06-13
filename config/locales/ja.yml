@@ -33,6 +33,7 @@ ja:
         too_short: が短すぎます
         too_long: が長すぎます
         taken: は既に使われています
+        confirmation: と%{attribute}の入力が一致しません
   helpers:
     submit:
       create: 登録する
