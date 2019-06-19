@@ -17,7 +17,7 @@
 
         .form-item
           = f.label :deadline, class: "form-item__label"
-          = f.date_field :deadline, value: Time.current.strftime("%Y-%m-%d"), class: "form-item__text"
+          = f.date_field :deadline, class: "form-item__text"
 
         .form-item
           = f.submit nil, class: "a-button is-submit"
