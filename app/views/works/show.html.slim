@@ -9,30 +9,41 @@
           = day
         li.work-deadline__item
           | 日
-    .work-status
+    .card
       .card-tabs
         = render "card/card_tabs", work: @work
       .card-list
         - if @progresses
           = render partial: "progresses/progress", collection: @progresses, as: :progress
         - else
-          .card-info
-            ul.card-info-items
+          .card-info-items
+            ul.card-info-item
               li.card-info-item__title
                 i.fas.fa-bookmark.is-left-icon
                 | タイトル
-              li.card-info-item__content
+              li.card-info-item__body
                 = @work.title
-            ul.card-info-items
+            ul.card-info-item
               li.card-info-item__title
                 i.fas.fa-copy.is-left-icon
                 | ページ数
-              li.card-info-item__content
+              li.card-info-item__body
                 = @work.pages.length
                 | p
-            ul.card-info-items
+            ul.card-info-item
               li.card-info-item__title
                 i.fas.fa-calendar-alt.is-left-icon
                 | 締切
-              li.card-info-item__content
+              li.card-info-item__body
                 = @work.deadline
+            ul.card-info-item
+              li.card-info-item__title
+                i.fas.fa-calendar-alt.is-left-icon
+                | 進み具合
+              ul.card-info-item__body
+                - @work.stages.each do |stage|
+                  - completed_pages = @work.progresses.where(stage: stage, status: 2).size
+                  - total_pages     = @work.pages.size
+                  li.card-info-item__column
+                    = stage.name
+                    = number_to_percentage(completed_pages.fdiv(total_pages) * 100, precision: 0)

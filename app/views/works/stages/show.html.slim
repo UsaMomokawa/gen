@@ -9,13 +9,6 @@
           = day
         li.work-deadline__item
           | 日
-      ul.work-percentage__items
-        - @work.stages.each do |stage|
-          - completed_pages = @work.progresses.where(stage: stage, status: 2).size
-          - total_pages     = @work.pages.size
-          li.work-percentage__item
-            = stage.name
-            = number_to_percentage(completed_pages.fdiv(total_pages) * 100, precision: 0)
     .card
       .card-tabs
         = render "card/card_tabs", work: @work
