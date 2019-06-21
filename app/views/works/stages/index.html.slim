@@ -1,0 +1,18 @@
+.stages-table
+  .stages-table__head
+    | 『#{@work.title}』の作業リスト
+  - @stages.each do |stage|
+    .stages-table__thread
+      .stages-table__title
+        =  stage.name
+      .stages-table__buttons
+        button
+          = link_to "編集", edit_work_stage_path(@work, stage), class: "stages-table__button is-info"
+        button
+          = link_to "削除", work_stage_path(@work, stage), method: :delete,  data: { confirm: "#{stage.name}を削除します。よろしいですか？" }, class: "stages-table__button is-danger"
+
+.stages-tools
+  .stages-tool
+    = link_to "手順を追加", new_work_stage_path(@work), class: "a-button is-submit"
+  .stages-tool
+    = link_to "原稿に戻る", work_path(@work), class: "a-button stages-tool__button"
