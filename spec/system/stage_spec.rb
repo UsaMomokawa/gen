@@ -4,15 +4,35 @@ require "rails_helper"
 
 RSpec.describe "Stages", type: :system do
   let!(:user) { create :user }
-  let!(:work) { create :work, :with_stages, user: user }
+  let!(:work) { create :work, :with_stage, user: user }
+  let!(:stage) { work.stages.first } # stage.name = "線画"
 
-  it "add a stage" do
+  before do
     login_as user
-    visit works_path
-    visit new_work_stage_path(work_id: work)
-    fill_in "手順名", with: "線画"
+  end
+
+  it "add anoter stage" do
+    visit new_work_stage_path(work_id: work.id)
+    fill_in "手順名", with: "トーン"
     click_button "登録する"
 
-    expect(page).to have_content "線画が登録されました"
+    expect(page).to have_content "トーンが登録されました"
+  end
+
+  it "edit a stage" do
+    visit edit_work_stage_path(work_id: work.id, id: stage.id)
+    fill_in "手順名", with: "下書き"
+    click_button "更新する"
+
+    expect(page).to have_content "手順を更新しました"
+  end
+
+  it "delete a stage" do
+    visit work_stages_path(work_id: work.id)
+    accept_alert do
+      click_button "削除"
+    end
+
+    expect(page).to have_content "手順を削除しました"
   end
 end

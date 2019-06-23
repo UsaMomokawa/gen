@@ -3,7 +3,7 @@
 require "rails_helper"
 
 RSpec.describe Work, type: :model do
-  it "is invalid with a title which has more than 41 words" do
+  it "is invalid with a title which has more than 40 words" do
     work = FactoryBot.build(:work, title: "#{"w" * 41}")
     work.valid?
     expect(work.errors[:title]).to include("が長すぎます")
