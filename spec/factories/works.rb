@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :work do
-    title { "テストの原稿" }
+    sequence(:title) { |n| "テスト#{n}の原稿" }
     user { create :user }
     deadline { Date.current }
 
@@ -12,7 +12,7 @@ FactoryBot.define do
       end
     end
 
-    trait(:with_stages) do
+    trait(:with_stage) do
       after(:create) do |work, evaluator|
         pages = create_list(:page, 4, work: work)
         stage = create(:stage, name: "線画", work: work)

@@ -21,6 +21,6 @@ Rails.application.routes.draw do
   resources :pages, only: %i(create destroy)
 
   resources :works, only: %i(show) do
-    resources :stages, only: %i(new create show), controller: "works/stages"
+    resources :stages, only: %i(index new create show edit update destroy), controller: "works/stages"
   end
 end
