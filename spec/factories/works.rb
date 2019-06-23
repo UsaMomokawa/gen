@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :work do
-    title { "テストの原稿" }
+    sequence(:title) { |n| "テスト#{n}の原稿" }
     user { create :user }
     deadline { Date.current }
 
