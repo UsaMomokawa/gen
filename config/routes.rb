@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  root to: "works#index"
+
+  get "/welcome", to: "welcome#index", as: "welcome"
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
-
-  root to: "works#index"
 
   namespace "api" do
     resources :works, only: %i(show) do
