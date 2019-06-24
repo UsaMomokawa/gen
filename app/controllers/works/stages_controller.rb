@@ -27,6 +27,7 @@ class Works::StagesController < ApplicationController
       end
       redirect_to work_stages_path(work), notice: "#{@stage.name}が登録されました"
     else
+      flash.now[:alert] = "入力項目に誤りがあります"
       render "new"
     end
   end
@@ -42,6 +43,7 @@ class Works::StagesController < ApplicationController
     if @stage.update(stage_params)
       redirect_to work_stages_path(work), notice: "手順を更新しました"
     else
+      flash.now[:alert] = "入力項目に誤りがあります"
       render "edit"
     end
   end

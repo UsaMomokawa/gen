@@ -4,9 +4,9 @@
 
   .form-body
     - if @work.errors.present?
-      ul
+      ul.error-messages
         - @work.errors.full_messages.each do |message|
-          li
+          li.error-message
             = message
 
     .form-items
