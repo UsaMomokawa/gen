@@ -1,7 +1,7 @@
 - if stage.errors.present?
-  ul
+  ul.error-messages
     - stage.errors.full_messages.each do |message|
-      li
+      li.error-message
         = message
 
 = form_with model: [:work, stage], local: true do |f|

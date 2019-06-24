@@ -14,6 +14,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to works_path, notice: "アカウントを登録しました"
     else
+      flash.now[:alert] = "入力項目に誤りがあります"
       render "new"
     end
   end
@@ -28,6 +29,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to works_path, notice: "アカウント情報を更新しました"
     else
+      flash.now[:alert] = "入力項目に誤りがあります"
       render "edit"
     end
   end

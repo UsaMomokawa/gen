@@ -24,6 +24,7 @@ class WorksController < ApplicationController
       end
       redirect_to work_path(@work), notice: "#{@work.title}が登録されました"
     else
+      flash.now[:alert] = "入力項目に誤りがあります"
       render "new"
     end
   end
@@ -38,6 +39,7 @@ class WorksController < ApplicationController
     if @work.update(work_params)
       redirect_to work_path(@work), notice: "#{@work.title}の情報が変更されました"
     else
+      flash.now[:alert] = "入力項目に誤りがあります"
       render "edit"
     end
   end

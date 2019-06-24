@@ -1,7 +1,7 @@
 - if user.errors.present?
-  ul
+  ul.error-messages
     - user.errors.full_messages.each do |message|
-      li
+      li.error-message
         = message
 
 .form-items
