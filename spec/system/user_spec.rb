@@ -8,7 +8,7 @@ RSpec.describe "Users", type: :system do
       visit new_user_path
       fill_in "名前", with: "hitoshi"
       fill_in "メールアドレス", with: "hitoshi@example.com"
-      fill_in "パスワード", with: "testtest"
+      fill_in "パスワード(8文字以上)", with: "testtest"
       fill_in "パスワード(確認)", with: "testtest"
       click_button "登録する"
 
@@ -24,7 +24,7 @@ RSpec.describe "Users", type: :system do
       visit edit_user_path(user)
       fill_in "名前", with: "masashi"
       fill_in "メールアドレス", with: "masashi@example.com"
-      fill_in "パスワード", with: "masashi111"
+      fill_in "パスワード(8文字以上)", with: "masashi111"
       fill_in "パスワード(確認)", with: "masashi111"
       click_button "更新する"
 
