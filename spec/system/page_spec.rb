@@ -4,7 +4,7 @@ require "rails_helper"
 
 RSpec.describe "Pages", type: :system do
   let!(:user) { create :user }
-  let!(:work) { create :work, :with_stages, user: user }
+  let!(:work) { create :work, :with_stage, user: user }
   let!(:stage) { work.stages.first }
 
   before do
