@@ -1,21 +1,26 @@
 .header__container
   display: flex
+  flex-flow: row wrap
+  padding: 1rem 4rem
   justify-content: space-between
   align-items: center
-  height: 60px
   background-color: $main
   color: $reversal
+  +media-breakpoint-down($sm)
+    flex-flow: column wrap
+    padding: 1rem 2rem
+    justify-content: center
+    align-items: flex-end
 
 .header-title
-  display: flex
-  padding-left: 5rem
-  font-size: 30px
+  font-size: 2rem
 
 .header-menu__items
-  display: flex
-  padding-right: 5rem
+  display: inline-flex
+  +media-breakpoint-down($sm)
+    display: none
 
 .header_menu__item
-  padding-right: 2rem
-  
-
+  margin: 0 2rem
+  +media-breakpoint-down($sm)
+    margin: 0 0 1rem 0

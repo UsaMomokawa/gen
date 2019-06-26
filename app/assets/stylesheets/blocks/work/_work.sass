@@ -9,20 +9,35 @@
     background-color: #fafafa
 
 .work-deadline
-  margin: 4rem 8rem
-  padding: 5rem 8rem
+  width: 30rem
+  margin: 4rem auto
+  padding: 3rem
   border-radius: 2rem 
   background-color: #eee
+  +media-breakpoint-down($sm)
+    width: auto
+    margin: 2rem auto
 
 .work-deadline__items
   display: flex
   justify-content: center
   align-items: flex-end
+  +media-breakpoint-down($lg)
+    flex-direction: column
+    justify-content: flex-end
+    align-items: center
 
 .work-deadline__item
   font-size: 2rem
   font-weight: bold
   color: $main
-  &.is-deadline
+  +media-breakpoint-down($sm)
+    font-size: 1.5rem
+  span
     font-size: 3rem
     color: $danger
+    position: relative
+    bottom: -4px
+    +media-breakpoint-down($sm)
+      font-size: 2rem
+      bottom: -2px

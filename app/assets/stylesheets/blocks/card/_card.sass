@@ -1,6 +1,11 @@
 .card
-  margin:  0 5rem
   overflow: auto
+  +media-breakpoint-up($xl)
+    margin: 0 20rem
+  +media-breakpoint-down($xl)
+    margin: 0 4rem
+  +media-breakpoint-down($sm)
+    margin: 0
 
 .card-footer
   padding: 2rem

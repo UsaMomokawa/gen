@@ -2,6 +2,8 @@
   display: flex
   flex-flow: column wrap
   padding: 5rem 3rem
+  +media-breakpoint-down($sm)
+    padding: 5rem 0
 
 .welcome-section
   padding-bottom: 5rem
@@ -15,23 +17,31 @@
 
 .welcome-section__description
   font-size: .875rem
+  +media-breakpoint-down($sm)
+    padding: 0 1rem
 
 .welcome-section__action-items
   display: inline-flex
-  padding-top: 5rem
+  padding-top: 3rem
+  +media-breakpoint-down($sm)
+    flex-flow: column wrap
 
 .welcome-section__action-item
   padding: 0 1rem
+  +media-breakpoint-down($sm)
+    padding: .5rem 0
 
 .welcome-section__action-item__signup
-  padding: 1rem 3rem
+  display: block
+  padding: 1.125rem 3rem
   border-radius: .5rem
   font-size: .75rem
   font-weight: bold
   background-color: $accent
 
 .welcome-section__action-item__login
-  padding: 1rem 4rem
+  display: block
+  padding: 1.125rem 4rem
   border: dotted 1px $main
   border-radius: .5rem
   font-size: .75rem
@@ -41,6 +51,8 @@
 .welcome-small-section__body
   display: flex
   flex-flow: row wrap
+  +media-breakpoint-down($sm)
+    flex-flow: column wrap
 
 .welcome-small-section__column
   flex-direction: column

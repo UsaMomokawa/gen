@@ -15,12 +15,24 @@
   flex: 100
   justify-content: space-between
   align-items: center
+  padding: 0 2rem
   flex-flow: row wrap
+  +media-breakpoint-down($sm)
+    justify-content: flex-start
+    align-items: flex-start
+    padding: 0
 
 .card-list-item__number
+  position: relative
   font-size: 1.75rem
   font-weight: bold
   color: $main
+  +media-breakpoint-down($sm)
+    left: .5em
+    bottom: -.5em
 
 .card-list-item__actions
   color: $border
+  +media-breakpoint-down($sm)
+    margin-top: 1rem
+    margin-left: 2rem
