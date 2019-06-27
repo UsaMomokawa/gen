@@ -2,25 +2,69 @@
   display: flex
   flex-flow: row wrap
   padding: 1rem 4rem
-  justify-content: space-between
+  justify-content: flex-end
   align-items: center
   background-color: $main
-  color: $reversal
+  color: $card
   +media-breakpoint-down($sm)
-    flex-flow: column wrap
-    padding: 1rem 2rem
-    justify-content: center
-    align-items: flex-end
+    padding: 1rem 1rem
 
 .header-title
+  margin-right: 1.5rem
   font-size: 2rem
 
-.header-menu__items
-  display: inline-flex
-  +media-breakpoint-down($sm)
-    display: none
+.header-links
+  display: flex
+  align-items: center
 
-.header_menu__item
-  margin: 0 2rem
-  +media-breakpoint-down($sm)
-    margin: 0 0 1rem 0
+.header-links__link
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  position: relative
+  transition: all .2s ease-in
+  cursor: pointer
+
+.header-links__link-icon
+  font-size: 1.5rem
+
+.header-links__item
+  display: flex
+  position: relative
+  transition: color .2s ease-in, background-color .2s ease-in
+  pointer: selector
+
+.header-dropdown
+  display: none
+  input:checked + &
+    display: block
+
+.header-dropdown__inner
+  position: absolute
+  right: 0
+  top: 2rem
+  z-index: 2
+  width: 12rem
+  border: solid 1px $border
+  border-radius: .25rem
+  box-shadow: $border 0 0 .125rem
+  background-color: $secondary
+  pointer: selector
+
+.header-dropdown__item
+  &:not(:last-child)
+  border-bottom: solid 1px $border
+
+.header-dropdown__item-link
+  display: flex
+  padding: 1rem .5rem
+  font-size: .75rem
+  color: $main
+
+.header-dropdown__background
+  position: fixed
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  z-index: 2
