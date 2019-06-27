@@ -16,8 +16,8 @@
         = render partial: "progresses/progress", collection: @progresses, as: :progress
       .card-footer
         .card-footer__items
-          button.a-button.is-submit
+          .card-footer__item
+            i.fas.fa-plus.card-footer__item-icon
             = form_with url: pages_path, local: true do |f|
               = hidden_field_tag :work_id, @work.id
-              i.fas.fa-plus.is-left-icon
-              = f.submit "ページを増やす"
+              = f.submit "ページを増やす", class: "a-button is-submit card-footer__item-icon-link"
