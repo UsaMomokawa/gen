@@ -1,21 +1,14 @@
 .header__container
   display: flex
-  justify-content: space-between
+  flex-flow: row wrap
+  padding: 1rem 4rem
+  justify-content: flex-end
   align-items: center
-  height: 60px
   background-color: $main
-  color: $reversal
+  color: $card
+  +media-breakpoint-down($sm)
+    padding: 1rem 1rem
 
 .header-title
-  display: flex
-  padding-left: 5rem
-  font-size: 30px
-
-.header-menu__items
-  display: flex
-  padding-right: 5rem
-
-.header_menu__item
-  padding-right: 2rem
-  
-
+  margin-right: 1.5rem
+  font-size: 2rem

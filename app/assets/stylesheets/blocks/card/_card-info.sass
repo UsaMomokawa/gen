@@ -7,12 +7,16 @@
   border-bottom-right-radius: 7.5px
   padding: 3rem
   background-color: $card
+  +media-breakpoint-down($sm)
+    flex-flow: column wrap
 
 .card-info-item
   display: flex
   flex-direction: column
   padding-right: 3rem
   padding-bottom: 1rem
+  +media-breakpoint-down($sm)
+    padding-right: 3rem
 
 .card-info-item__title
   padding-bottom: 1rem
@@ -22,6 +26,11 @@
 
 .card-info-item__body
   display: inline-flex
+  +media-breakpoint-down($sm)
+    flex-flow: column wrap
 
 .card-info-item__column
   padding-right: 1rem
+  +media-breakpoint-down($sm)
+    padding-right: 0
+    padding-bottom: .5rem

@@ -1,6 +1,24 @@
 .card
-  margin:  0 5rem
   overflow: auto
+  +media-breakpoint-up($xl)
+    margin: 0 16rem
+  +media-breakpoint-down($xl)
+    margin: 0 4rem
+  +media-breakpoint-down($sm)
+    margin: 0
 
 .card-footer
   padding: 2rem
+
+.card-footer__items
+  display: flex
+  justify-content: center
+
+.card-footer__item-icon
+  font-size: .75rem
+  position: relative
+  top: 1.75rem
+  left: 2rem
+
+.card-footer__item-icon-link
+  padding-left: 4rem
