@@ -21,3 +21,6 @@
 
     .form-item
       = f.submit nil, class: "a-button is-submit"
+
+    .form-item
+      = link_to "戻る", request.referer, class: "form-item__link"
