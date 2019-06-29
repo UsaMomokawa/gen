@@ -30,7 +30,7 @@ RSpec.describe "Stages", type: :system do
   it "delete a stage" do
     visit work_stages_path(work_id: work.id)
     accept_alert do
-      click_button "削除"
+      click_link "削除"
     end
 
     expect(page).to have_content "手順を削除しました"

@@ -21,7 +21,7 @@ RSpec.describe "Works", type: :system do
   end
 
   it "edit a work" do
-    click_button "編集"
+    click_link "編集"
     fill_in "タイトル", with: "りんごの原稿"
     click_button "更新する"
 
@@ -30,7 +30,7 @@ RSpec.describe "Works", type: :system do
 
   it "delete a work" do
     accept_alert do
-      click_button "削除"
+      click_link "削除"
     end
 
     expect(page).to have_content "おれんじの原稿を削除しました"

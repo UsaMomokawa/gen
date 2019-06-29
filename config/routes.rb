@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: "works#index"
 
   get "/welcome", to: "welcome#index", as: "welcome"
+  get "/discramer", to: "discramer#index", as: "discramer"
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"

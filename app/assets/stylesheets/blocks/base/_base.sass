@@ -2,16 +2,17 @@ html
   font-family: $default_font
   color: $default-text
 
+.wrapper
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
 .container
   padding-left: 1.5rem
   padding-right: 1.5rem
   +media-breakpoint-down($sm)
     padding-left: 1rem
     padding-right: 1rem
-
-.wrapper
-  margin-left: auto
-  margin-right: auto
 
 .is-left-icon
   padding-right: .5rem
