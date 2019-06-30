@@ -1,6 +1,8 @@
 .card-list-items
   display: flex
-  padding: 2rem
+  flex: 100
+  padding: 2rem 4rem
+  justify-content: space-between
   background-color: $card
   &:nth-child(even)
     background-color: $card-shade
@@ -9,30 +11,32 @@
   &:last-child
     border-bottom-left-radius: 7.5px
     border-bottom-right-radius: 7.5px
+  +media-breakpoint-down($sm)
+    padding: 2rem
+    flex-direction: column
 
 .card-list-item
-  display: inline-flex
-  flex: 100
-  justify-content: space-between
-  align-items: center
-  padding: 0 2rem
+  display: flex
   flex-flow: row wrap
+  align-items: center
   +media-breakpoint-down($sm)
-    justify-content: flex-start
-    align-items: flex-start
-    padding: 0
+    justify-content: space-around
+    &:not(:last-child)
+      margin-bottom: 2rem
 
 .card-list-item__number
-  position: relative
+  display: inline-flex
+  margin-right: 2rem
   font-size: 1.75rem
   font-weight: bold
   color: $main
   +media-breakpoint-down($sm)
-    left: .5em
-    bottom: -.5em
+    margin-right: 0
 
 .card-list-item__actions
   color: $border
+  margin-left: 2rem
+  +media-breakpoint-up($xl)
+    margin-left: 4rem
   +media-breakpoint-down($sm)
-    margin-top: 1rem
-    margin-left: 2rem
+    display: none
