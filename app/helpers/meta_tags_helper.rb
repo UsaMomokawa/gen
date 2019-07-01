@@ -3,7 +3,7 @@
 module MetaTagsHelper
   def default_meta_tags
     {
-      site: "GEN",
+      title: "GEN",
       reverse: true,
       charset: "utf-8",
       description: "漫画描きがつくった、漫画を描く人のための、進捗管理アプリです。",
