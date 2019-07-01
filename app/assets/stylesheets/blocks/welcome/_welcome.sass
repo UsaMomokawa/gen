@@ -21,6 +21,7 @@
     color: $danger
   p
     line-height: 1.4rem
+    padding-bottom: 2rem
   +media-breakpoint-down($sm)
     padding: 0 1rem
 
@@ -63,16 +64,18 @@
   flex-basis: 50%
 
 .welcome-small-section__inner
-  height: 20rem
+  display: flex
+  flex-direction: column
+  align-items: center
+  height: 24rem
   margin: 2rem
-  padding: 2rem
+  padding: 1.5rem
   border: dashed 1px $main
   border-radius: 7.5px
   +media-breakpoint-down($md)
     margin: 1rem
   +media-breakpoint-down($sm)
     margin: 1rem 0
-    height: 25rem
 
 .welcome-small-section__title
   padding-bottom: 2rem
@@ -81,14 +84,25 @@
   color: $main
 
 .welcome-small-section__sub-title
+  position: absolute
   font-weight: bold
   color: $main
   span
     color: $danger
 
+.welcome-small-section__icon
+  position: relative
+  top: 2em
+
 .welcome-small-section__description
-  font-size: .85rem
+  position: relative
+  top: 3em
+  font-size: .75rem
+  br
+    display: none
   p
     padding-bottom: .5rem
-  +media-breakpoint-down($sm)
-    font-size: .75rem
+  +media-breakpoint-down($md)
+    br
+      display: block
+

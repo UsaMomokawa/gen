@@ -1,8 +1,10 @@
 .page-status
   display: flex
+  +media-breakpoint-down($sm)
 
 .page-status__buttons
   display: flex
+  white-space: nowrap
   li:first-child
     .a-button
       border-top-right-radius: 0

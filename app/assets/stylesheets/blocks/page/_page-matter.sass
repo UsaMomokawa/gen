@@ -1,6 +1,9 @@
-.page-matter__button
+.page-matter
   display: flex
   justify-content: center
+  
+.page-matter__button
+  display: flex
   align-items: center
   padding: .5rem 1rem
   border: solid 1px $danger
@@ -8,13 +11,10 @@
   background-color: $secondary
   color: $danger
   cursor: pointer
+  white-space: nowrap
   &.is-active
     background-color: $danger
     color: $reversal
-  +media-breakpoint-down($sm)
-    position: relative
-    left: 3em
-    margin-bottom: 1.5rem
 
 .page-matter__icon
   position: relative
