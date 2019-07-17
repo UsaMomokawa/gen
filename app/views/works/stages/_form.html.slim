@@ -7,7 +7,7 @@
 = form_with model: [:work, stage], local: true do |f|
   .form-item
     = f.label :name, class: "form-item__label"
-    = f.text_field :name, class: "form-item__text"
+    = f.text_field :name, class: "form-item__text", placeholder: "線画"
   
   .form-item
     = f.submit nil, class: "a-button is-submit"
