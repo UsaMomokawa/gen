@@ -1,37 +1,36 @@
 .welcome-sections
   display: flex
   flex-flow: column wrap
-  padding: 6rem 0
+  padding: 4rem 0
   +media-breakpoint-down($sm)
-    padding: 4rem 0
+    padding: 3rem 0
 
 .welcome-section
-  padding-bottom: 5rem
   text-align: center
+  padding-bottom: 4rem
+  +media-breakpoint-down($sm)
+    padding-bottom: 2rem
 
 .welcome-section__title
-  padding-bottom: 3rem
-  font-size: 1.75rem
+  font-size: 5rem
   font-weight: bold
   color: $main
   img
     padding-right: .5rem
 
 .welcome-section__description
-  font-size: .875rem
+  padding: 2rem 0
+  p
+    line-height: 1.5
   span
     color: $danger
-  p
-    line-height: 1.4rem
-    padding-bottom: 2rem
-  +media-breakpoint-down($sm)
-    padding: 0 1rem
 
 .welcome-section__action-items
   display: inline-flex
-  padding-top: 3rem
+  padding-top: 1rem
   +media-breakpoint-down($sm)
     flex-flow: column wrap
+    padding-top: 0
 
 .welcome-section__action-item
   padding: 0 1rem
@@ -58,55 +57,45 @@
 .welcome-small-section__body
   display: flex
   flex-flow: row wrap
-  width: 100%
+  justify-content: center
+  margin: 0 -12px -16px
   +media-breakpoint-down($sm)
     flex-flow: column wrap
 
 .welcome-small-section__column
   flex-direction: column
-  flex-basis: 100%
-  flex: 1
+  padding: 0 12px 16px
 
 .welcome-small-section__inner
   display: flex
   flex-direction: column
   align-items: center
-  height: 24rem
-  margin: 1rem
-  padding: 1.5rem
+  height: 100%
+  padding: 2rem
   border: dashed 1px $main
   border-radius: 7.5px
-  +media-breakpoint-down($md)
-    margin: 1rem
-  +media-breakpoint-down($sm)
-    margin: 1rem 0
 
 .welcome-small-section__title
-  padding-bottom: 2rem
-  font-size: 1.75rem
+  padding-bottom: 2.5rem
+  font-size: 2.5rem
   font-weight: bold
   color: $main
+  +media-breakpoint-down($sm)
+    font-size: 2rem
 
 .welcome-small-section__sub-title
-  position: absolute
+  font-size: 1.5rem
   font-weight: bold
   color: $main
   span
     color: $danger
 
 .welcome-small-section__icon
-  position: relative
-  top: 2em
+  height: 100%
 
 .welcome-small-section__description
-  position: relative
-  top: 3em
   font-size: .875rem
-  br
-    display: none
   p
-    padding-bottom: .5rem
-  +media-breakpoint-down($md)
-    br
-      display: block
-
+    line-height: 1.5
+    &:not(:last-child)
+      margin-bottom: .5rem
