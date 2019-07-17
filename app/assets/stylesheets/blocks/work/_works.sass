@@ -23,22 +23,26 @@
   display: flex
   justify-content: space-around
   align-items: center
-  padding: 1rem 5rem
+  padding: 1rem
   border-bottom: solid 1px $border
   +media-breakpoint-down($sm)
     flex-flow: column wrap
-    padding: 1rem 2rem
+    padding: .5rem 1rem
 
 .works-table__title
-  display: inline-flex
+  display: inline
+  text-align: center
   flex-basis: 60%
-  justify-content: center
+  padding: 1rem
+  font-size: 1.25rem
+  a
+    display: block
   +media-breakpoint-down($sm)
-    padding: 2rem 0
+    padding: 2rem 1rem
 
 .works-table__link
   color: $main
-  text-decoration: underline
+  text-decoration: underline dotted
 
 .works-table__buttons
   display: inline-flex
