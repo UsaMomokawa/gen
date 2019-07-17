@@ -6,12 +6,15 @@
   display: flex
   align-items: center
   padding: .5rem 1rem
-  border: solid 1px $danger
+  border: solid 1px $border
   border-radius: .5rem
-  background-color: $secondary
-  color: $danger
+  color: $border
   cursor: pointer
   white-space: nowrap
+  &:hover
+    background-color: $secondary
+    border: solid 1px $danger
+    color: $danger
   &.is-active
     background-color: $danger
     color: $reversal
