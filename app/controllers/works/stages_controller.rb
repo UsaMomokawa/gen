@@ -40,7 +40,7 @@ class Works::StagesController < ApplicationController
     @stage = Stage.find(params[:id])
 
     if @stage.update(stage_params)
-      redirect_to work_stages_path(@stage.work), notice: "手順を更新しました"
+      redirect_to work_stages_path(@stage.work), notice: "工程を更新しました"
     else
       flash.now[:alert] = "入力項目に誤りがあります"
       render "edit"
@@ -50,7 +50,7 @@ class Works::StagesController < ApplicationController
   def destroy
     stage = Stage.find(params[:id])
     stage.destroy
-    redirect_to work_stages_path(stage.work), notice: "手順を削除しました"
+    redirect_to work_stages_path(stage.work), notice: "工程を削除しました"
   end
 
   private

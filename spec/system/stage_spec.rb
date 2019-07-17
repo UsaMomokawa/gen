@@ -13,7 +13,7 @@ RSpec.describe "Stages", type: :system do
 
   it "add anoter stage" do
     visit new_work_stage_path(work_id: work.id)
-    fill_in "手順名", with: "トーン"
+    fill_in "工程名", with: "トーン"
     click_button "登録する"
 
     expect(page).to have_content "トーンが登録されました"
@@ -21,10 +21,10 @@ RSpec.describe "Stages", type: :system do
 
   it "edit a stage" do
     visit edit_work_stage_path(work_id: work.id, id: stage.id)
-    fill_in "手順名", with: "下書き"
+    fill_in "工程名", with: "下書き"
     click_button "更新する"
 
-    expect(page).to have_content "手順を更新しました"
+    expect(page).to have_content "工程を更新しました"
   end
 
   it "delete a stage" do
@@ -33,6 +33,6 @@ RSpec.describe "Stages", type: :system do
       click_link "削除"
     end
 
-    expect(page).to have_content "手順を削除しました"
+    expect(page).to have_content "工程を削除しました"
   end
 end

@@ -13,7 +13,7 @@
   .container
     .stages-table
       .stages-table__head
-        | 手順一覧
+        | 工程一覧
       - @stages.each do |stage|
         .stages-table__thread
           .stages-table__name
@@ -24,6 +24,6 @@
 
     .stages-tools
       .stages-tool
-        = link_to "手順を追加", new_work_stage_path(@work), class: "a-button is-submit"
+        = link_to "工程を追加", new_work_stage_path(@work), class: "a-button is-submit"
       .stages-tool
         = link_to "原稿に戻る", work_path(@work), class: "a-button stages-tool__button"

@@ -3,7 +3,7 @@ ja:
     models:
       user: アカウント
       work: 原稿
-      stage: 手順
+      stage: 工程
       page: ページ
       progress: 進捗
     attributes:
@@ -19,7 +19,7 @@ ja:
         total_page: ページ数
         deadline: 締切
       stage:
-        name: 手順名
+        name: 工程名
     enums:
       progress:
         status:
