@@ -58,19 +58,21 @@
 .welcome-small-section__body
   display: flex
   flex-flow: row wrap
+  width: 100%
   +media-breakpoint-down($sm)
     flex-flow: column wrap
 
 .welcome-small-section__column
   flex-direction: column
-  flex-basis: 50%
+  flex-basis: 100%
+  flex: 1
 
 .welcome-small-section__inner
   display: flex
   flex-direction: column
   align-items: center
   height: 24rem
-  margin: 2rem
+  margin: 1rem
   padding: 1.5rem
   border: dashed 1px $main
   border-radius: 7.5px
