@@ -1,6 +1,19 @@
-.form-container
-  .form-title
-    | 手順の編集
+.page-body
+  .work-header
+    .work-header__title
+      = @work.title
+      .work-header__title-item
+        = link_to edit_work_path(@work)
+          i.fas.fa-cog
+    .work-header__deadline
+      | 締め切りまであと
+      span
+        = (@work.deadline - Date.today).numerator
+      | 日
+  .container
+    .form-container
+      .form-title
+        | 手順の編集
 
-  .form-body
-    = render "form", stage: @stage
+      .form-body
+        = render "form", stage: @stage

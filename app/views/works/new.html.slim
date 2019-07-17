@@ -1,32 +1,33 @@
-.form-container
-  .form-title
-    | 新しい原稿の登録
+.page-body
+  .container
+    .form-container
+      .form-title
+        | 新しい原稿の登録
+      .form-body
+        - if @work.errors.present?
+          ul.error-messages
+            - @work.errors.full_messages.each do |message|
+              li.error-message
+                = message
 
-  .form-body
-    - if @work.errors.present?
-      ul.error-messages
-        - @work.errors.full_messages.each do |message|
-          li.error-message
-            = message
+        .form-items
+          = form_with model: @work, local: true do |f|
+            .form-item
+              = f.label :title, class: "form-item__label"
+              = f.text_field :title, class: "form-item__text"
 
-    .form-items
-      = form_with model: @work, local: true do |f|
-        .form-item
-          = f.label :title, class: "form-item__label"
-          = f.text_field :title, class: "form-item__text"
+            .form-item
+              = f.label :total_page, class: "form-item__label"
+              .form-item__select
+                i.fas.fa-caret-down.is-left-icon
+                = f.select :total_page, (4..40).map{ |n| n if n.even? }.compact!
 
-        .form-item
-          = f.label :total_page, class: "form-item__label"
-          .form-item__select
-            i.fas.fa-caret-down.is-left-icon
-            = f.select :total_page, (4..40).map{ |n| n if n.even? }.compact!
+            .form-item
+              = f.label :deadline, class: "form-item__label"
+              = f.date_field :deadline, value: Time.current.strftime("%Y-%m-%d"), class: "form-item__text"
 
-        .form-item
-          = f.label :deadline, class: "form-item__label"
-          = f.date_field :deadline, value: Time.current.strftime("%Y-%m-%d"), class: "form-item__text"
+            .form-item
+              = f.submit nil, class: "a-button is-submit"
 
-        .form-item
-          = f.submit nil, class: "a-button is-submit"
-
-        .form-item
-          = link_to "戻る", request.referer, class: "form-item__link"
+            .form-item
+              = link_to "戻る", request.referer, class: "form-item__link"

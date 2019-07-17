@@ -1,15 +1,16 @@
-.container
-  .works-table
-    .works-table__head
-      | 原稿一覧
-    - @works.each do |work|
-      .works-table__thread
-        .works-table__title
-          = link_to "#{work.title}", work_path(work), class: "works-table__link"
-        .works-table__buttons
-          = link_to "編集", edit_work_path(work), class: "works-table__button is-info"
-          = link_to "削除", work, method: :delete,  data: { confirm: "#{work.title}を削除します。よろしいですか？" }, class: "works-table__button is-danger"
 
-  .works-tools
-    .works-tool
-      = link_to "原稿を登録する", new_work_path, class: "a-button is-submit"
+.page-body
+  .container
+    .works-table
+      .works-table__head
+        | 原稿一覧
+      - @works.each do |work|
+        .works-table__thread
+          .works-table__title
+            = link_to "#{work.title}", work_path(work), class: "works-table__link"
+          .works-table__buttons
+            = link_to "編集", edit_work_path(work), class: "works-table__button is-info"
+            = link_to "削除", work, method: :delete,  data: { confirm: "#{work.title}を削除します。よろしいですか？" }, class: "works-table__button is-danger"
+    .works-tools
+      .works-tool
+        = link_to "原稿を登録する", new_work_path, class: "a-button is-submit"
