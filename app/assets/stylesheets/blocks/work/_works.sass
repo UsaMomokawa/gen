@@ -16,29 +16,29 @@
   border-top-left-radius: 7.5px
   border-top-right-radius: 7.5px
   background-color: $main
-  padding: 1rem
+  padding: 1.5rem
   color: $reversal
+  font-size: 1.75rem
 
 .works-table__thread
   display: flex
   justify-content: space-around
   align-items: center
-  padding: 1rem
   border-bottom: solid 1px $border
   +media-breakpoint-down($sm)
-    flex-flow: column wrap
-    padding: .5rem 1rem
+    flex-flow: row wrap
+    padding: 1rem 1rem
 
 .works-table__title
   display: inline
   text-align: center
   flex-basis: 60%
-  padding: 1rem
+  padding: 2rem 1rem
   font-size: 1.25rem
   a
     display: block
   +media-breakpoint-down($sm)
-    padding: 2rem 1rem
+    flex-basis: 100%
 
 .works-table__link
   color: $main
@@ -46,9 +46,13 @@
 
 .works-table__buttons
   display: inline-flex
+  justify-content: center
   flex-basis: 40%
+  +media-breakpoint-down($sm)
+    flex-basis: 100%
 
 .works-table__button
+  display: block
   margin: 0 .5rem
   padding: 1rem 2rem
   border-radius: 2rem
