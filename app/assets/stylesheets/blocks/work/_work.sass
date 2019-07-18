@@ -7,14 +7,17 @@
   border-bottom: dashed 1px
   font-size: 2rem
   color: $main
-  +media-breakpoint-down($sm)
+  +media-breakpoint-down($md)
     flex-direction: column
     padding: 1rem
+  +media-breakpoint-down($sm)
     font-size: 1.5rem
 
 .work-header__title
   display: flex
   align-items: center
+  +media-breakpoint-down($md)
+    padding-bottom: .5rem
 
 .work-header__title-item
   margin-left: .5rem
