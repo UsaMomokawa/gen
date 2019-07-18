@@ -19,7 +19,6 @@
             .form-item
               = f.label :total_page, class: "form-item__label"
               .form-item__select
-                i.fas.fa-caret-down.is-left-icon
                 = f.select :total_page, (4..40).map{ |n| n if n.even? }.compact!
 
             .form-item
