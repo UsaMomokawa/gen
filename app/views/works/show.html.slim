@@ -1,14 +1,16 @@
 .page-body
+  .work-header
+    .work-header__title
+      = @work.title
+      .work-header__title-item
+        = link_to edit_work_path(@work)
+          i.fas.fa-cog
+    .work-header__deadline
+      | 締め切りまであと
+      span
+        = (@work.deadline - Date.today).numerator
+      | 日
   .container
-    .work-deadline
-      - day = (@work.deadline - Date.today).numerator
-      ul.work-deadline__items
-        li.work-deadline__item
-          | 締切まであと
-        li.work-deadline__item
-          span
-            = day
-          | 日
     .card
       .card-tabs
         = render "card/card_tabs", work: @work

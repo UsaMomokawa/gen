@@ -1,51 +1,55 @@
 .form-container
   width: 30rem
-  margin: 8rem auto
+  margin: 4rem auto
   border-radius: 1rem
   background-color: $card
   +media-breakpoint-down($sm)
     width: auto
-    margin: 4rem 1rem
+    margin: 2rem 0
 
 .form-title
-  display: flex
-  justify-content: center
-  align-items: center
-  padding: 1rem
-  font-size: 1.25rem
+  padding: 2rem 0
+  text-align: center
+  font-size: 1.75rem
   font-weight: bold
   color: $main
-  
+
 .form-items
-  margin-top: 1rem
-  padding-bottom: .5rem
+  padding: 0 3rem 2.5rem
+  +media-breakpoint-down($sm)
+    padding: 0 2rem 2.5rem
 
 .form-item
-  display: flex
-  flex-direction: column
-  justify-content: center
-  align-items: center
-  padding-bottom: 2rem
+  text-align: end
+  &:not(:last-child)
+    margin-bottom: 2rem
 
 .form-item__label
-  padding-bottom: 1rem
+  display: block
+  text-align: start
+  padding-bottom: .5rem
 
 .form-item__text
-  width: 15rem
-  border: solid 1px $main
-  border-radius: 2px
+  width: 100%
+  border: solid 1px $border
+  border-radius: 4px
+  padding: .25rem
+  font-size: 1.25rem
+  background-color: $secondary
 
 .form-item__select
-  display: flex
-  justify-content: center
-  align-items: center
-  width: 5rem
-  padding-left: .5rem
-  padding-bottom: .35rem
-  border-bottom: solid 1px $main
+  width: 100%
+  text-align: start
+  border: solid 1px $border
+  border-radius: 4px
+  padding: .5rem
+  font-size: 1.25rem
+  background-color: $secondary
+  select
+    padding-right: 12rem
 
 .form-item__link
-  font-size: .75rem
+  font-size: .875rem
   text-decoration: underline
   color: $border
 
@@ -57,3 +61,7 @@
 
 .form-footer__items-link
   color: $danger
+
+.is-login
+  background-color: transparent
+  border: dashed 1px $main

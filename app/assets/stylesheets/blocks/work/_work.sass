@@ -1,3 +1,34 @@
+.work-header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  text-align: center
+  padding: 1rem 3.75rem
+  border-bottom: dashed 1px
+  font-size: 2rem
+  color: $main
+  +media-breakpoint-down($md)
+    flex-direction: column
+    padding: 1rem
+  +media-breakpoint-down($sm)
+    font-size: 1.25rem
+
+.work-header__title
+  display: flex
+  align-items: center
+  +media-breakpoint-down($md)
+    padding-bottom: .5rem
+
+.work-header__title-item
+  margin-left: .5rem
+  font-size: 1.5rem
+  color: $border
+
+.work-header__deadline
+  span
+    padding: 0 .5rem
+    color: $danger
+
 .work-item__list
   background-color: #eee
   padding: .75rem 1rem
@@ -7,37 +38,3 @@
     border-bottom: none
   &:nth-child(odd)
     background-color: #fafafa
-
-.work-deadline
-  width: 30rem
-  margin: 6rem auto
-  padding: 3rem
-  border-radius: 2rem 
-  background-color: #eee
-  +media-breakpoint-down($sm)
-    width: auto
-    margin: 2rem auto
-
-.work-deadline__items
-  display: flex
-  justify-content: center
-  align-items: flex-end
-  +media-breakpoint-down($lg)
-    flex-direction: column
-    justify-content: flex-end
-    align-items: center
-
-.work-deadline__item
-  font-size: 2rem
-  font-weight: bold
-  color: $main
-  +media-breakpoint-down($sm)
-    font-size: 1.5rem
-  span
-    font-size: 3rem
-    color: $danger
-    position: relative
-    bottom: -4px
-    +media-breakpoint-down($sm)
-      font-size: 2rem
-      bottom: -2px

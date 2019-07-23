@@ -4,13 +4,14 @@
       li.error-message
         = message
 
-= form_with model: [:work, stage], local: true do |f|
-  .form-item
-    = f.label :name, class: "form-item__label"
-    = f.text_field :name, class: "form-item__text"
-  
-  .form-item
-    = f.submit nil, class: "a-button is-submit"
+.form-items
+  = form_with model: [:work, stage], local: true do |f|
+    .form-item
+      = f.label :name, class: "form-item__label"
+      = f.text_field :name, class: "form-item__text", placeholder: "線画"
+    
+    .form-item
+      = f.submit nil, class: "a-button is-submit"
 
-  .form-item
-    = link_to "戻る", request.referer, class: "form-item__link"
+    .form-item
+      = link_to "戻る", request.referer, class: "form-item__link"

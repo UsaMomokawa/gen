@@ -1,9 +1,11 @@
 .card
   overflow: auto
   +media-breakpoint-up($xl)
-    margin: 0 16rem
+    margin: 4rem 16rem
   +media-breakpoint-down($xl)
-    margin: 0 4rem
+    margin: 4rem 4rem
+  +media-breakpoint-down($md)
+    margin: 4rem 2rem
   +media-breakpoint-down($sm)
     margin: 2rem 0
 
@@ -17,9 +19,9 @@
     justify-content: center
 
 .card-footer__item-icon
-  font-size: .75rem
+  font-size: .875rem
   position: relative
-  top: 1.75rem
+  top: 2rem
   left: 2rem
 
 .card-footer__item-icon-link

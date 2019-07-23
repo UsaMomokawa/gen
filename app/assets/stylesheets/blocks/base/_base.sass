@@ -10,6 +10,10 @@ html
 .container
   padding-left: 1.5rem
   padding-right: 1.5rem
+  &.is-welcome
+    width: 75rem
+    max-width: 100%
+    margin: 0 auto
   +media-breakpoint-down($sm)
     padding-left: 1rem
     padding-right: 1rem
@@ -28,3 +32,6 @@ html
 
 .is-danger
   background-color: $danger
+
+.is-main
+  background-color: $main

@@ -1,19 +1,20 @@
-.form-container
-  .form-title
-    | ログイン
+.container
+  .form-container.is-login
+    .form-title
+      | ログイン
 
-  .form-body
-    .form-items
-      = form_with scope: :session, local: true do |f|
-        .form-item
-          = f.label :email, "メールアドレス", class: "form-item__label"
-          = f.text_field :email, id: 'session_email', class: "form-item__text"
-        .form-item
-          = f.label :password, "パスワード", class: "form-item__label"
-          = f.password_field :password, id: 'session_password', class: "form-item__text"
+    .form-body
+      .form-items
+        = form_with scope: :session, local: true do |f|
+          .form-item
+            = f.label :email, "メールアドレス", class: "form-item__label"
+            = f.text_field :email, id: 'session_email', class: "form-item__text"
+          .form-item
+            = f.label :password, "パスワード", class: "form-item__label"
+            = f.password_field :password, id: 'session_password', class: "form-item__text"
 
-        .form-item
-          = f.submit 'ログイン', class: "a-button is-submit"
+          .form-item
+            = f.submit 'ログイン', class: "a-button is-submit"
 
-        .form-item
-          = link_to "戻る", request.referer, class: "form-item__link"
+          .form-item
+            = link_to "戻る", request.referer, class: "form-item__link"

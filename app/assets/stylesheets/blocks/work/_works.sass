@@ -1,13 +1,13 @@
 .works-table
   width: 60%
-  margin-top: 8rem
+  margin-top: 4rem
   margin-left: auto
   margin-right: auto
   background-color: $card
   +media-breakpoint-down($md)
     width: 80%
   +media-breakpoint-down($sm)
-    margin-top: 4rem
+    margin-top: 2rem
     width: 100%
 
 .works-table__head
@@ -16,38 +16,47 @@
   border-top-left-radius: 7.5px
   border-top-right-radius: 7.5px
   background-color: $main
-  padding: 1rem
+  padding: 1.5rem
   color: $reversal
+  font-size: 1.75rem
 
 .works-table__thread
   display: flex
   justify-content: space-around
   align-items: center
-  padding: 1rem 5rem
   border-bottom: solid 1px $border
   +media-breakpoint-down($sm)
-    flex-flow: column wrap
-    padding: 1rem 2rem
+    flex-flow: row wrap
+    padding: 1rem 1rem
 
 .works-table__title
-  display: inline-flex
+  display: inline
+  text-align: center
   flex-basis: 60%
-  justify-content: center
+  padding: 2rem 1rem
+  font-size: 1.25rem
+  a
+    display: block
   +media-breakpoint-down($sm)
-    padding: 2rem 0
+    flex-basis: 100%
 
 .works-table__link
-  text-decoration: underline
+  color: $main
+  text-decoration: underline dotted
 
 .works-table__buttons
   display: inline-flex
+  justify-content: center
   flex-basis: 40%
+  +media-breakpoint-down($sm)
+    flex-basis: 100%
 
 .works-table__button
+  display: block
   margin: 0 .5rem
-  padding: .5rem 1rem
+  padding: 1rem 2rem
   border-radius: 2rem
-  font-size: .75rem
+  font-size: .875rem
   white-space: nowrap
   color: $reversal
 

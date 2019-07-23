@@ -1,9 +1,11 @@
 .error-messages
   display: flex
   flex-flow: column wrap
-  align-items: center
-  font-size: .75rem
+  padding: 0 3rem
+  font-size: .875rem
   color: $danger
+  +media-breakpoint-down($sm)
+    padding: 0 2rem
 
 .error-message
   padding-bottom: .5rem

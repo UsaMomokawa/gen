@@ -8,7 +8,7 @@
         <button class="page-status__button a-button js-started" v-bind:disabled="statusName === 'started'" v-bind:class="[statusName === 'started' ? 'is-primary' : 'is-secondary']" @click="pushStatus('started')">開始</button>
       </li>
       <li class="page-status__buttons-item">
-        <button class="page-status__button a-button js-complete" v-bind:disabled="statusName === 'complete'" v-bind:class="[statusName === 'complete' ? 'is-primary' : 'is-secondary']" @click="pushStatus('complete')">完了</button>
+        <button class="page-status__button a-button js-complete" v-bind:disabled="statusName === 'complete'" v-bind:class="[statusName === 'complete' ? 'is-main' : 'is-secondary']" @click="pushStatus('complete')">完了</button>
       </li>
     </ul>
   </div>

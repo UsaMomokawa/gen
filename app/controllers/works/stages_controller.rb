@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 class Works::StagesController < ApplicationController
+  before_action :set_work, only: %i(index show new edit)
+
   def index
-    @work = find_work
     @stages = @work.stages.order(:created_at)
   end
 
   def show
-    @work  = find_work
     @stage = Stage.find(params[:id])
     @progresses = @work.progresses.where(stage: @stage).order(:page_id)
   end
@@ -17,7 +17,7 @@ class Works::StagesController < ApplicationController
   end
 
   def create
-    work = find_work
+    work = Work.find(params[:work_id])
     @stage = Stage.new(stage_params)
     @stage.work = work
 
@@ -38,10 +38,9 @@ class Works::StagesController < ApplicationController
 
   def update
     @stage = Stage.find(params[:id])
-    work = @stage.work
 
     if @stage.update(stage_params)
-      redirect_to work_stages_path(work), notice: "手順を更新しました"
+      redirect_to work_stages_path(@stage.work), notice: "工程を更新しました"
     else
       flash.now[:alert] = "入力項目に誤りがあります"
       render "edit"
@@ -51,7 +50,7 @@ class Works::StagesController < ApplicationController
   def destroy
     stage = Stage.find(params[:id])
     stage.destroy
-    redirect_to work_stages_path(stage.work), notice: "手順を削除しました"
+    redirect_to work_stages_path(stage.work), notice: "工程を削除しました"
   end
 
   private
@@ -61,7 +60,7 @@ class Works::StagesController < ApplicationController
       )
     end
 
-    def find_work
-      Work.find(params[:work_id])
+    def set_work
+      @work = Work.find(params[:work_id])
     end
 end
